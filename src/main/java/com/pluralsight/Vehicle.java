@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Pattern;
 
 public class Vehicle {
@@ -101,10 +102,19 @@ public class Vehicle {
         this.price = price;
     }
 
-//@Override
-//    public String toString(){
-//        return "...";
-//}
+@Override
+    public String toString(){
+    return "Vehicle{" +
+            "vin=" + vin +
+            ", year=" + year  +
+            ", make='" + make + '\'' +
+            ", model='" + model + '\'' +
+            ", vehicleType=" + vehicleType + '\'' +
+            ", color=" + color + '\'' +
+            ", odometer=" + odometer + '\'' +
+            ", price=" + price +
+            '}';
+}
 
 
 

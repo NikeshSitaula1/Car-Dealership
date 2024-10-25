@@ -11,11 +11,9 @@ public class DealershipFileManager {
     
     public static Dealership getDealership() {
 
-        String dealerName = Console.PromptForString("Dealership name: ");
-        String dealerAddress = Console.PromptForString("Dealership Address: ");
-        String dealerPhone = Console.PromptForString("Dealership Phone: ");
 
-        Dealership dealership = new Dealership(dealerName, dealerAddress, dealerPhone);
+
+        Dealership dealership = new Dealership();
 
         try {
             FileReader fr = new FileReader("inventory.csv");
