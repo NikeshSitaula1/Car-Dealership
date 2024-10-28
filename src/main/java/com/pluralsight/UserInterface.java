@@ -13,6 +13,7 @@ public class UserInterface {
                 System.out.println("-----------------Welcome to Car Dealership-------------------");
                 System.out.println("1. [Display] all vehicles");
                 System.out.println("2. [Add] a vehicle");
+                System.out.println("0. [Exit]");
                 System.out.print(">> ");
 
                 String option = Console.PromptForString();
@@ -25,6 +26,9 @@ public class UserInterface {
                 }
                 else if (option.equals("3")) {
                     System.out.println("remove vehicle");
+                }
+                else if (option.equals("0")){
+                    return;
                 }
                 else {
                     System.out.println("Invalid entry");

@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class Dealership {
 
@@ -17,6 +18,13 @@ public class Dealership {
         inventory = new ArrayList<Vehicle>();
     }
 
+//    public Dealership(String dataString){
+//        String[] tokens = dataString.split(Pattern.quote("|"));
+//        this.name = tokens[0];
+//        this.address = tokens[1];
+//        this.phone = tokens[2];
+//
+//    }
 
     public void addVehicle(Vehicle vehicle){
         inventory.add(vehicle);
@@ -24,12 +32,6 @@ public class Dealership {
 
     public ArrayList<Vehicle> getAllVehicles(){
         return inventory;
-    }
-
-    public void allVehicles(){
-        for(Vehicle vehicle : inventory){
-            System.out.println(vehicle);
-        }
     }
 
     public void removeVehicle(Vehicle vehicle){
