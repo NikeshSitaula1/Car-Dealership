@@ -18,6 +18,18 @@ public class Dealership {
         inventory = new ArrayList<Vehicle>();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
 //    public Dealership(String dataString){
 //        String[] tokens = dataString.split(Pattern.quote("|"));
 //        this.name = tokens[0];
@@ -50,15 +62,5 @@ public class Dealership {
         return vehicleRange;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
 }
