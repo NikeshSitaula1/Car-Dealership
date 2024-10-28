@@ -11,8 +11,6 @@ public class DealershipFileManager {
     
     public static Dealership getDealership() {
 
-
-
         Dealership dealership = new Dealership();
 
         try {
@@ -20,7 +18,6 @@ public class DealershipFileManager {
             BufferedReader br = new BufferedReader(fr);
 
             String input;
-
             br.readLine(); //Skips line by line
 
             /* Read each line from the file until there are no more lines to read.
@@ -50,11 +47,15 @@ public class DealershipFileManager {
 
             // Loop through transactions and write each one to the file
             for (Vehicle vehicle : dealership.getAllVehicles()) {
-                String data = vehicle.getVin() + "|"
-                        + vehicle.getYear() + "|" + vehicle.getMake() + "|" + vehicle.getModel()
-                        + "|" + vehicle.getVehicleType() + "|" + vehicle.getColor() + "|" +vehicle.getColor() +
-                        "|" + vehicle.getOdometer() + "|" + vehicle.getPrice() + "\n";
-                bw.write(data);
+                bw.write(new StringBuilder()
+                        .append(vehicle.getVin()).append("|")
+                        .append(vehicle.getYear()).append("|")
+                        .append(vehicle.getMake()).append("|")
+                        .append(vehicle.getModel()).append("|")
+                        .append(vehicle.getVehicleType()).append("|")
+                        .append(vehicle.getColor()).append("|")
+                        .append(vehicle.getOdometer()).append("|")
+                        .append(vehicle.getPrice()).append("\n").toString());
             }
             bw.close(); // Close the BufferedWriter
 
