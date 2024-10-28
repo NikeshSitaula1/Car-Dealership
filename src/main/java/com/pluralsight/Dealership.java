@@ -49,4 +49,16 @@ public class Dealership {
         }
         return vehicleRange;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
 }
