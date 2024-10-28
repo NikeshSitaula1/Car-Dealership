@@ -13,6 +13,8 @@ public class UserInterface {
                 System.out.println("-----------------Welcome to Car Dealership-------------------");
                 System.out.println("1. [Display] all vehicles");
                 System.out.println("2. [Add] a vehicle");
+                System.out.println("3. [Remove] a vehicle");
+                System.out.println("4. Filter by Price [Range]");
                 System.out.println("0. [Exit]");
                 System.out.print(">> ");
 
@@ -25,7 +27,10 @@ public class UserInterface {
                     addVehicle();
                 }
                 else if (option.equals("3")) {
-                    System.out.println("remove vehicle");
+                    removeVehicle();
+                }
+                else if (option.equals("4")){
+                    byPrice();
                 }
                 else if (option.equals("0")){
                     return;
@@ -37,12 +42,6 @@ public class UserInterface {
                 System.out.println("Invalid entry");
             }
         }while (true);
-
-
-    }
-
-    public void display(){
-
     }
 
     public void displayAll(){
@@ -68,5 +67,17 @@ public class UserInterface {
         //call the dealerships addVehicle method, passing it the vehicle you just created.
         deal.addVehicle(v);
         DealershipFileManager.saveDealership(deal);
+    }
+
+    void removeVehicle(){
+    }
+
+    void byPrice(){
+        double min = Console.PromptForDouble("Enter min: ");
+        double max = Console.PromptForDouble("Enter max: ");
+
+        for (Vehicle vehicle : deal.getVehicleByPrice(min, max)){
+            System.out.println(vehicle);
+        }
     }
 }

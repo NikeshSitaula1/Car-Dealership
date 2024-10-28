@@ -37,4 +37,16 @@ public class Dealership {
     public void removeVehicle(Vehicle vehicle){
         inventory.remove(vehicle);
     }
+
+    public ArrayList<Vehicle> getVehicleByPrice(double min, double max){
+
+        ArrayList<Vehicle> vehicleRange = new ArrayList<Vehicle>();
+
+        for (Vehicle vehicle : inventory){
+            if(vehicle.getPrice() >= min && vehicle.getPrice() <= max){
+                vehicleRange.add(vehicle);
+            }
+        }
+        return vehicleRange;
+    }
 }

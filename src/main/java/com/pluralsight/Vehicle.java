@@ -114,8 +114,5 @@ public class Vehicle {
             ", odometer=" + odometer + '\'' +
             ", price=" + price +
             '}';
-}
-
-
-
+    }
 }
