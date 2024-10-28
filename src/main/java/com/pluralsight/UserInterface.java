@@ -69,8 +69,19 @@ public class UserInterface {
         DealershipFileManager.saveDealership(deal);
     }
 
+
     public void removeVehicle(){
+        int vin = Console.PromptForInt("Enter vin: ");
+
+        for(Vehicle vehicle : deal.getAllVehicles()){
+            if(vehicle.getVin() == vin){
+                deal.removeVehicle(vehicle);
+                DealershipFileManager.saveDealership(deal);
+                break;
+            }
+        }
     }
+
 
     public void byPrice(){
         double min = Console.PromptForDouble("Enter min: ");
@@ -80,4 +91,6 @@ public class UserInterface {
             System.out.println(vehicle);
         }
     }
+
+
 }
