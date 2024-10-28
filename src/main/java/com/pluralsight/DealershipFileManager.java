@@ -53,9 +53,6 @@ public class DealershipFileManager {
             FileWriter fw = new FileWriter("inventory.csv");
             BufferedWriter bw = new BufferedWriter(fw);
 
-
-            bw.write("D & B Used Cars|111 Old Benbrook Rd|817-555-5555 \n");
-
             // Loop through transactions and write each one to the file
             for (Vehicle vehicle : dealership.getAllVehicles()) {
                 bw.write(new StringBuilder()

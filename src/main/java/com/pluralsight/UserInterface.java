@@ -51,9 +51,9 @@ public class UserInterface {
     }
 
     void addVehicle(){
-        //get lots of values from the user...
+        //get values from the user...
         int vin = Console.PromptForInt("Enter Vin: ");
-        int year = Console.PromptForInt("Enter date: ");
+        int year = Console.PromptForInt("Enter year: ");
         String make = Console.PromptForString("Enter make: ");
         String model = Console.PromptForString("Enter model: ");
         String vehicleType = Console.PromptForString("Enter vehicle type: ");
