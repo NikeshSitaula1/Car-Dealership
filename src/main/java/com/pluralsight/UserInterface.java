@@ -50,7 +50,7 @@ public class UserInterface {
         }
     }
 
-    void addVehicle(){
+    public void addVehicle(){
         //get values from the user...
         int vin = Console.PromptForInt("Enter Vin: ");
         int year = Console.PromptForInt("Enter year: ");
@@ -69,10 +69,10 @@ public class UserInterface {
         DealershipFileManager.saveDealership(deal);
     }
 
-    void removeVehicle(){
+    public void removeVehicle(){
     }
 
-    void byPrice(){
+    public void byPrice(){
         double min = Console.PromptForDouble("Enter min: ");
         double max = Console.PromptForDouble("Enter max: ");
 
