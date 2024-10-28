@@ -8,17 +8,25 @@ import java.util.regex.Pattern;
 
 public class DealershipFileManager {
 
-    
     public static Dealership getDealership() {
 
-        Dealership dealership = new Dealership();
+        Dealership dealership = null;
 
         try {
             FileReader fr = new FileReader("inventory.csv");
             BufferedReader br = new BufferedReader(fr);
 
             String input;
-            br.readLine(); //Skips line by line
+
+            if ((input = br.readLine()) != null) {
+                String[] tokens = input.split(Pattern.quote("|"));
+                String name = tokens[0];
+                String address = tokens[1];
+                String phone = tokens[2];
+
+                dealership = new Dealership(name, address, phone);
+            }
+            //br.readLine(); //Skips line by line
 
             /* Read each line from the file until there are no more lines to read.
             Splits the lines into tokens using the '|' character as the delimiter.
@@ -26,6 +34,7 @@ public class DealershipFileManager {
             while ((input = br.readLine()) != null) {
 
                 Vehicle vehicle = new Vehicle(input);
+                assert dealership != null;
                 dealership.addVehicle(vehicle);
             }
             br.close(); //Closes the BufferedReader
@@ -39,11 +48,13 @@ public class DealershipFileManager {
 
     // Method to save transactions to a file in a specific format
     public static void saveDealership(Dealership dealership) {
-
         try {
             //Creating a file writer and assigning the file writer to the buffered writer.
             FileWriter fw = new FileWriter("inventory.csv");
             BufferedWriter bw = new BufferedWriter(fw);
+
+
+            bw.write("D & B Used Cars|111 Old Benbrook Rd|817-555-5555 \n");
 
             // Loop through transactions and write each one to the file
             for (Vehicle vehicle : dealership.getAllVehicles()) {

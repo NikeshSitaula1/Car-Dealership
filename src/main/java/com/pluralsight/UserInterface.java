@@ -22,7 +22,11 @@ public class UserInterface {
                 }
                 else if (option.equals("2")) {
                     addVehicle();
-                } else {
+                }
+                else if (option.equals("3")) {
+                    System.out.println("remove vehicle");
+                }
+                else {
                     System.out.println("Invalid entry");
                 }
             } catch (Exception e){
@@ -35,7 +39,6 @@ public class UserInterface {
 
     public void display(){
 
-
     }
 
     public void displayAll(){
@@ -43,7 +46,6 @@ public class UserInterface {
             System.out.println(vehicle);
         }
     }
-
 
     void addVehicle(){
         //get lots of values from the user...
