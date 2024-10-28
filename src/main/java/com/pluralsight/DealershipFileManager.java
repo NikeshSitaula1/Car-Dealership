@@ -66,7 +66,7 @@ public class DealershipFileManager {
     }
 
     private static String getEncodedDealershipHeader(Dealership dealership){
-        return dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone();
+        return dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone() + "\n";
     }
 
     private static String getEncodedVehicle(Vehicle vehicle){
