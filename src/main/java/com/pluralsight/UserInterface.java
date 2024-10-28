@@ -74,7 +74,7 @@ public class UserInterface {
         int vin = Console.PromptForInt("Enter vin: ");
 
         for(Vehicle vehicle : deal.getAllVehicles()){
-            if(vehicle.getVin() == vin){
+            if(vin == vehicle.getVin() ){
                 deal.removeVehicle(vehicle);
                 DealershipFileManager.saveDealership(deal);
                 break;
