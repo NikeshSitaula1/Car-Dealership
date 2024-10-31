@@ -72,16 +72,17 @@ public class UserInterface {
 
     public void removeVehicle(){
         int vin = Console.PromptForInt("Enter vin: ");
+        deal.removeVehicle(vin);
 
-        for(Vehicle vehicle : deal.getAllVehicles()){
-            if(vin == vehicle.getVin() ){
-                deal.removeVehicle(vehicle);
-                DealershipFileManager.saveDealership(deal);
-                break;
-            }
-        }
+//        for(Vehicle vehicle : deal.getAllVehicles()){
+//            if(vin == vehicle.getVin() ){
+//                deal.removeVehicle(vehicle);
+//                DealershipFileManager.saveDealership(deal);
+//                break;
+//            }
+//        }
+
     }
-
 
     public void byPrice(){
         double min = Console.PromptForDouble("Enter min: ");
@@ -91,6 +92,5 @@ public class UserInterface {
             System.out.println(vehicle);
         }
     }
-
 
 }

@@ -50,6 +50,11 @@ public class Dealership {
         inventory.remove(vehicle);
     }
 
+    public void removeVehicle(int vin){
+        Vehicle vehicle = this.getVehicleByVIN(vin);
+        inventory.remove(vehicle);
+    }
+
     public ArrayList<Vehicle> getVehicleByPrice(double min, double max){
 
         ArrayList<Vehicle> vehicleRange = new ArrayList<Vehicle>();
@@ -62,5 +67,12 @@ public class Dealership {
         return vehicleRange;
     }
 
-
+    public Vehicle getVehicleByVIN(int vin) {
+        for (Vehicle vehicle : getAllVehicles()) {
+            if (vehicle.getVin() == vin) {
+                return vehicle;
+            }
+        }
+        return null;
+    }
 }
